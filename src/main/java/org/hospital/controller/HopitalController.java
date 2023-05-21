@@ -1,5 +1,6 @@
 package org.hospital.controller;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import org.hospital.dao.HospitalDao;
@@ -22,7 +23,7 @@ public class HopitalController {
 		hospital.setGst(gst);
 		
 	}
-	public static void main(String[] args) {
+	public static void controller() {
 	
 		System.out.println("Select your choice by entering the respective number");
 		System.out.println("1.Add Hospital Details");
@@ -73,6 +74,16 @@ public class HopitalController {
 		default:
 			System.out.println("Please select a valid choice by entering the respective Number");
 			break;
+		}
+		System.out.println("Do You want to continue to Perform the Operations \n y/n");
+		String toContinue = sc.next();
+		String y = "y";
+		String Y = "Y";
+		if(toContinue.equalsIgnoreCase(y) || toContinue.equalsIgnoreCase(Y)) {
+			controller();
+		}
+		else {
+			sc.close();
 		}
 	}
 }
